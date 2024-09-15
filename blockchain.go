@@ -91,7 +91,7 @@ func (bc *Blockchain) Iterator() *BlockchainIterator {
 	return bci
 }
 
-func (i *BlockchainIterator) next() *Block {
+func (i *BlockchainIterator) Next() *Block {
 	var block *Block
 	err := i.db.View(func(tx *bolt.Tx) error {
 		b := tx.Bucket([]byte(blocksBucket))
